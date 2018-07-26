@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MpesaCheckoutEvent;
 use App\Exceptions\AfricasTalkingGatewayException;
 use App\Jobs\MpesaCheckoutJob;
 use App\Jobs\SendAirtimeJob;
@@ -35,7 +36,7 @@ class UssdController extends Controller
                 break;
             case '1':
                     $response  = "END Thank you. \n";
-                    MpesaCheckoutJob::dispatch(request('phoneNumber'));
+                    event(new MpesaCheckoutEvent(request('phoneNumber')));
                 break;
             case '2':
                 $response = "CON How much do you want to send \n";

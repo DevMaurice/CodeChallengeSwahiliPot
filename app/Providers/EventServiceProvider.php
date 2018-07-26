@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\AirtimeSentEvent' => [
             'App\Listeners\SendConfirmationMessage',
         ],
+        'App\Events\MpesaCheckoutEvent' => [
+            'App\Listeners\InvokeMpesaCheckOutListener'
+        ]
     ];
 
     /**

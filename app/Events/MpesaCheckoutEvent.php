@@ -10,11 +10,11 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class AirtimeSentEvent
+class MpesaCheckoutEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    Public $phone;
+    public $phone;
     /**
      * Create a new event instance.
      *

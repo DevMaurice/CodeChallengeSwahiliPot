@@ -33,6 +33,7 @@ class SendConfirmationMessage
         try
             {
               $results = $this->gateway->sendMessage($event->phone, $message);
+              Log::info($results);
             }
             catch ( AfricasTalkingGatewayException $e )
             {
