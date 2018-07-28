@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $gateway = $this->app->singleton('africas', function ($app) {
-            return new AfricasTalkingGateway('sandbox', '2e3de328ff8ae1300991dfb18efb71bd97383ea6fadcf3e14604c35e8cb97a21');
+            return new AfricasTalkingGateway(config('challenge.account'), config('challenge.key'));
         });
     }
 }

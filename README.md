@@ -1,6 +1,6 @@
 # USSD Code Challenge: SwahiliPot Developer Community
 ## Due: 30th July,2018 or Earlier
-#### This code challenge is due on the 30th of July,2018 or earlier. 
+#### This code challenge is due on the 30th of July,2018 or earlier.
 
 ## Simple Unchanging Rules
 The code challenge is and will always be judged using the following criteria
@@ -34,7 +34,7 @@ In this code challenge you will be required to make a USSD application that impl
 
 ### Task Workflow:
 1. User initiates USSD code
-2. User selects from the menu which should contain 
+2. User selects from the menu which should contain
   1. Mobile checkout
   2. Send airtime option
 3. If the user selects the mobile checkout, they should be able to pay via MPESA
@@ -64,5 +64,21 @@ Please read the overview for all code challenges [here.](http://atdevoutreach.vi
 
 ## Get Support on the Africa's Talking Slack
 In case you have any questions, join our Slack [here](https://slackin-africastalking.now.sh/)
+
+## Laravel Codebase.
+
+1. Clone the project.
+2. Cd to project.
+3. Run composer require.
+4. cp .env.example .env
+5. Run `php artisan key:generate`
+6. Set the username and key on .env for AT.
+6. Run ` php artisan serve `
+7. If you have ngrok . Run ` ngrok http 8000 `
+8. Go to AfricasTalking and set the genarated ngrok url callback when creating a USSD code.
+9. Use the simulator on AT to test the sample.
+
+# Points to Note.
+On AT if you invoke two sessionid one will be queued on their side. So for mpesa checkout option its invoked but queued on their side.
 
 

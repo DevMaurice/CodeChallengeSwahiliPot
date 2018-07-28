@@ -27,7 +27,6 @@ class InvokeMpesaCheckOutListener
      */
     public function handle(MpesaCheckoutEvent $event)
     {
-        sleep(10);
-        MpesaCheckoutJob::dispatch($event->phone);
+        MpesaCheckoutJob::dispatch($event->phone)->delay(now()->addSeconds(5));
     }
 }

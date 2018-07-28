@@ -47,8 +47,9 @@ class MpesaCheckoutJob implements ShouldQueue
                                $this->phone,
                                $currencyCode,
                                $amount,
-                               $metadata
-            );
+                               $metadata);
+
+                 Log::info($transactionId);
         } catch (AfricasTalkingGatewayException $e) {
             Log::critical("Received error response: ".$e->getMessage());
         }
